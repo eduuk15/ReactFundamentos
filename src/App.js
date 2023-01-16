@@ -6,27 +6,39 @@ import Post from './Post';
 function App() {
     return (
         <>
-            <Header title="JStack's Blog">
+            <Header>
                 <h2>Posts da semana</h2>
             </Header>
 
             <hr />
 
             <Post
-                title="Título da notícia 1"
-                subtitle="Subtítulo da notícia 1"
+                likes={20}
+                post={{
+                    title: "Título da notícia 1",
+                    subtitle: "Subtítulo da notícia 1"
+                }}
             />
             <Post
-                title="Título da notícia 2"
-                subtitle="Subtítulo da notícia 2"
+                likes={10}
+                post={{
+                    title: "Título da notícia 2",
+                    subtitle: "Subtítulo da notícia 2"
+                }}
             />
             <Post
-                title="Título da notícia 3"
-                subtitle="Subtítulo da notícia 3"
+                likes={50}
+                post={{
+                    title: "Título da notícia 3",
+                    subtitle: "Subtítulo da notícia 3"
+                }}
             />
             <Post
-                title="Título da notícia 4"
-                subtitle="Subtítulo da notícia 4"
+                likes={30}
+                post={{
+                    title: "Título da notícia 4",
+                    subtitle: "Subtítulo da notícia 4"
+                }}
             />
         </>
     );
