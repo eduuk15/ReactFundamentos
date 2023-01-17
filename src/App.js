@@ -5,9 +5,9 @@ import Post from './Post';
 
 function App() {
     const [posts, setPosts] = useState([
-        { id: Math.random(), title: 'Title1', subtitle: 'Sub1', likes: 20 },
-        { id: Math.random(), title: 'Title2', subtitle: 'Sub2', likes: 40 },
-        { id: Math.random(), title: 'Title3', subtitle: 'Sub3', likes: 50 },
+        { id: Math.random(), title: 'Title1', subtitle: 'Sub1', likes: 20, read: false },
+        { id: Math.random(), title: 'Title2', subtitle: 'Sub2', likes: 40, read: true },
+        { id: Math.random(), title: 'Title3', subtitle: 'Sub3', likes: 50, read: false },
     ]);
 
     function handleRefresh() {
@@ -40,12 +40,7 @@ function App() {
             {posts.map(post => (
                 <Post
                     key={post.id}
-                    post={{
-                        id: post.id,
-                        title: post.title,
-                        subtitle: post.subtitle
-                    }}
-                    likes={post.likes}
+                    post={post}
                     onRemove={handleRemovePost}
                 />
             ))}
