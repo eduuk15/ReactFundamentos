@@ -22,6 +22,10 @@ function App() {
         ])
     }
 
+    function handleRemovePost(postId) {
+        setPosts((prevState) => prevState.filter(post => post.id !== postId))
+    }
+
     return (
         <>
             <Header>
@@ -37,10 +41,12 @@ function App() {
                 <Post
                     key={post.id}
                     post={{
+                        id: post.id,
                         title: post.title,
                         subtitle: post.subtitle
                     }}
                     likes={post.likes}
+                    onRemove={handleRemovePost}
                 />
             ))}
         </>
