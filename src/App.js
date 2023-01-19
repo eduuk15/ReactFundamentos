@@ -3,7 +3,10 @@ import Header from "./Header";
 
 import Post from './Post';
 
+import { ThemeProvider } from "./ThemeContext";
+
 function App() {
+
     const [posts, setPosts] = useState([
         { id: Math.random(), title: 'Title1', subtitle: 'Sub1', likes: 20, read: false },
         { id: Math.random(), title: 'Title2', subtitle: 'Sub2', likes: 40, read: true },
@@ -17,6 +20,7 @@ function App() {
                 id: Math.random(),
                 title: `Title${prevState.length + 1}`,
                 subtitle: `Sub${prevState.length + 1}`,
+                read: false,
                 likes: 50
             }
         ])
@@ -27,7 +31,7 @@ function App() {
     }
 
     return (
-        <>
+        <ThemeProvider>
             <Header>
                 <h2>
                     Posts da semana
@@ -44,7 +48,7 @@ function App() {
                     onRemove={handleRemovePost}
                 />
             ))}
-        </>
+        </ThemeProvider>
     );
 }
 
