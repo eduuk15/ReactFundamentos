@@ -2,10 +2,13 @@ import React from "react"
 import PropTypes from 'prop-types';
 import PostHeader from "./PostHeader";
 
+import styles from './Post.scss';
+
 export default function Post(props) {
     return (
-        <>
-            <article>
+            <article
+                className={props.post.removed ? styles.postDeleted : styles.post}
+            >
                 <PostHeader
                     onRemove={props.onRemove}
                     post={{
@@ -19,8 +22,6 @@ export default function Post(props) {
                 <br />
                 Média: {props.post.likes / 2}
             </article>
-            <br />
-        </>
     )
 }
 
@@ -31,6 +32,7 @@ Post.propTypes = {
         likes: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,
         subtitle: PropTypes.string.isRequired,
-        read: PropTypes.bool.isRequired
+        read: PropTypes.bool.isRequired,
+        removed: PropTypes.bool.isRequired
     }).isRequired,
 }
