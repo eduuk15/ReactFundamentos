@@ -5,7 +5,6 @@ import Post from '../Post';
 
 import { ThemeProvider } from "../../context/ThemeContext";
 
-import styles from './App.scss';
 import { Title } from './styles';
 
 function App() {
