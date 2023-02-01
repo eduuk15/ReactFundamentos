@@ -1,9 +1,12 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.article`
     margin-bottom: 24px;
 
-    opacity: ${(props) => props.removed ? 0.5 : 1};
+    ${(props) => css`
+        color: ${props.removed ? '#f00' : '#fff'};
+        opacity: ${props.removed ? 0.5 : 1};
+    `}
 `;
 
 export const Subtitle = styled.small`
